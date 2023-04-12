@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Middle-earth Meals</title>
+</head>
+
+<body>
+    {% for recipes in recipes%}
+    {{ recipes.Name }}<br>
+    {{ recipes.Style }}<br>
+    {{ recipes.Ingredients }}<br>
+    {{ recipes.Preparation_steps }}<br>
+    {{ recipes.Tools }}}<br>
+    {{ recipes.Notes}}<br>
+    {% endfor %}
+</body>
+
+</html>

@@ -17,6 +17,14 @@
         </ul>
       </nav>
     </header>
+{% for recipes in recipes%}
+{{ recipes.Name }}<br>
+{{ recipes.Style }}<br>
+{{ recipes.Ingredients }}<br>
+{{ recipes.Preparation_steps }}<br>
+{{ recipes.Tools }}}<br>
+{{ recipes.Notes}}<br>
+{% endfor %}
     <main>
         <h2>About Us</h2>
         <p>At Middle-earth Meals, we strive to bring the flavors of Tolkien's world to your kitchen. Our recipes are inspired by the dishes enjoyed by hobbits, elves, dwarves, and more, and we're always experimenting with new ways to bring the magic of Middle-earth to your table.</p>
