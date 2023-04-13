@@ -24,6 +24,7 @@ def get_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("home.html", recipes=recipes)
 
+#This is the code for the register page that checks if the username already exists and if it does it will display an error message and if it doesn't it will add the username and password to the database and log the user in.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -41,7 +42,27 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")
     return render_template("register.html")
-    
+
+#This is the login function that checks the username and password against the database and if it matches it will log the user in and if it doesn't it will display an error message.
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        
+        if existing_user:
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(request.form.get("username")))
+            else:
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
+        else:
+            flash("Incorrect Username and/or Password")
+            return redirect(url_for("login"))
+        
+    return render_template("login.html")    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
