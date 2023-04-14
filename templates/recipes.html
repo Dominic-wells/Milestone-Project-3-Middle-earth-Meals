@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="col-md-4 my-3">
+    <div class="card">
+        {% for recipe in recipes %}
+        <div class="card-body">
+            <h5 class="card-title">{{ recipe.Name }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Style }}</h6>
+            <p class="card-text">
+                <strong>Ingredients:</strong> {{ recipe.Ingredients }}<br>
+                <strong>Preparation Steps:</strong> {{ recipe.Preparation_steps }}<br>
+                <strong>Required Tools:</strong> {{ recipe.Tools }}<br>
+                <strong>Notes:</strong> {{ recipe.Notes }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
