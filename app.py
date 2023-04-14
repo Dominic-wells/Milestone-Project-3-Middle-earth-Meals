@@ -68,6 +68,13 @@ def login():
         
     return render_template("login.html")    
 
+
+@app.route("/logout")
+def logout():
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("login"))
+
 #this is the user profile page that displays the username of the user that is logged in, if the user is not logged in it will redirect them to the login page.
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
