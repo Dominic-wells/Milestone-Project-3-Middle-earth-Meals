@@ -22,8 +22,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
-    return render_template("home.html", recipes=recipes)
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
+
+@app.route("/add_recipe")
+def add_recipe():
+    return render_template("add_recipe.html")
+
 
 #This is the code for the register page that checks if the username already exists and if it does it will display an error message and if it doesn't it will add the username and password to the database and log the user in.
 @app.route("/register", methods=["GET", "POST"])
