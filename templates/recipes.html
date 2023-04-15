@@ -9,12 +9,20 @@
         <div class="card-body">
             <h5 class="card-title">{{ recipe.Name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Style }}</h6>
-            <p class="card-text">
-                <strong>Ingredients:</strong> {{ recipe.Ingredients }}<br>
-                <strong>Preparation Steps:</strong> {{ recipe.Preparation_steps }}<br>
+            <div class="card-text">
+                <strong>Ingredients:</strong><br>
+                {% for ingredient in recipe.Ingredients %}
+                - {{ ingredient }}<br>
+                {% endfor %}
+                <strong>Preparation Steps:</strong><br>
+                <ol>
+                    {% for step in recipe.Preparation_steps %}
+                    <li>{{ step }}</li>
+                    {% endfor %}
+                </ol>
                 <strong>Required Tools:</strong> {{ recipe.Tools }}<br>
                 <strong>Notes:</strong> {{ recipe.Notes }}
-            </p>
+            </div>
         </div>
         {% endfor %}
     </div>
