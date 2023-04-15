@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="row">
+    <h1>Add a New Recipe</h1>
+    <form action="{{ url_for('add_recipe') }}" method="POST">
+        <label for="Name">Recipe Name:</label>
+        <input type="text" id="recipe_name" name="Name" minlength="6" maxlength="55" required />
+
+        <label for="Style">Style:</label>
+        <input type="text" id="Style" name="Style" required />
+
+        <label for="Ingredients">Ingredients:</label>
+        <textarea name="Ingredients" id="Ingredients" rows="10" required></textarea>
+
+        <label for="preparation_steps">Preparation Steps:</label>
+        <textarea name="preparation_steps" rows="10" required></textarea>
+
+        <label for="Tools">Tools:</label>
+        <textarea name="Tools" id="Tools" rows="5" maxlength="55"></textarea>
+
+        <label for="Notes">Notes:</label>
+        <textarea name="Notes" id="Notes" rows="5"></textarea>
+
+        <input type="submit" value="Add Recipe" />
+    </form>
+</div>
+{% endblock %}
