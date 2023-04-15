@@ -25,10 +25,28 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
-
-@app.route("/add_recipe")
+#This is the code for adding a recipe to the database, it will split the ingredients and preparation steps into a list and add them to the database. Once the recipe is added it will display a success message and redirect the user to the recipes page.
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
-    return render_template("add_recipe.html")
+    if request.method == "POST":
+        ingredients = request.form.get("Ingredients").split("\n")
+        Preparation_steps = request.form.get("Preparation_steps").split("\n")
+        recipe = {
+            "Name": request.form.get("Name"),
+            "Category_name": request.form.get("Category_name"),
+            "Description": request.form.get("Description"),
+            "Ingredients": ingredients,
+            "Preparation_steps": Preparation_steps,
+            "Tools": request.form.get("Tools"),
+            "Notes": request.form.get("Notes"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
+    categories = mongo.db.categories.find().sort("Category_name", 1)
+    return render_template("add_recipe.html", categories=categories)
+
 
 
 #This is the code for the register page that checks if the username already exists and if it does it will display an error message and if it doesn't it will add the username and password to the database and log the user in.
