@@ -21,7 +21,10 @@
                     <li>{{ step }}</li>
                     {% endfor %}
                 </ol>
-                <strong>Required Tools:</strong> {{ recipe.Tools }}<br>
+                <strong>Required Tools:</strong><br>
+                {% for tool in recipe.Tools %}
+                - {{ tool }}<br>
+                {% endfor %}
                 <strong>Notes:</strong> {{ recipe.Notes }}<br>
                 <strong>By:</strong> {{ recipe.created_by }}<br>
             </div>
