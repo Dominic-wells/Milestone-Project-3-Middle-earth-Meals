@@ -55,10 +55,12 @@
                 {{-recipe.Notes-}}
             </textarea>
         </div>
-        <a herf="{{url_for('get_recipes') }}" class="btn btn-primary">Cancle</a>
-        <button type="submit" class="btn btn-primary">
-            Edit Recipe <i class="fas fa-plus-square"></i>
-        </button>
+        <div align="center">
+            <a href="{{ url_for('get_recipes') }}" class="btn btn-danger">Cancel</a>
+            <button type="submit" class="btn btn-primary">
+                Edit Recipe <i class="fas fa-plus-square"></i>
+            </button>
+        </div>
     </form>
 </div>
 
