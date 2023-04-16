@@ -4,12 +4,13 @@
 
 
 <div class="col-md-4 my-3">
+    {% for recipe in recipes %}
     <div class="card">
-        {% for recipe in recipes %}
         <div class="card-body">
             <h5 class="card-title">{{ recipe.Name }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Style }}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Category_name }}</h6>
             <div class="card-text">
+                <strong>Description:</strong> {{ recipe.Description }}<br>
                 <strong>Ingredients:</strong><br>
                 {% for ingredient in recipe.Ingredients %}
                 - {{ ingredient }}<br>
@@ -21,11 +22,12 @@
                     {% endfor %}
                 </ol>
                 <strong>Required Tools:</strong> {{ recipe.Tools }}<br>
-                <strong>Notes:</strong> {{ recipe.Notes }}
+                <strong>Notes:</strong> {{ recipe.Notes }}<br>
+                <strong>By:</strong> {{ recipe.created_by }}<br>
             </div>
         </div>
-        {% endfor %}
     </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
