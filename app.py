@@ -25,19 +25,22 @@ def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
-#This is the code for adding a recipe to the database, it will split the ingredients and preparation steps into a list and add them to the database. Once the recipe is added it will display a success message and redirect the user to the recipes page.
+
+#This is the code for adding a recipe to the database, it will split the ingredients and preparation steps into a list and
+#add them to the database. Once the recipe is added it will display a success message and redirect the user to the recipes page.
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
         ingredients = request.form.get("Ingredients").split("\n")
         Preparation_steps = request.form.get("Preparation_steps").split("\n")
+        tools = request.form.get("Tools").split("\n")
         recipe = {
             "Name": request.form.get("Name"),
             "Category_name": request.form.get("Category_name"),
             "Description": request.form.get("Description"),
             "Ingredients": ingredients,
             "Preparation_steps": Preparation_steps,
-            "Tools": request.form.get("Tools"),
+            "Tools": tools,
             "Notes": request.form.get("Notes"),
             "created_by": session["user"]
         }
@@ -48,8 +51,33 @@ def add_recipe():
     return render_template("add_recipe.html", categories=categories)
 
 
+#This is the code for the edit recipe page, users can edit the recipe and it will update the database.
+@app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    if request.method == "POST":
+        ingredients = request.form.get("Ingredients").split("\n")
+        Preparation_steps = request.form.get("Preparation_steps").split("\n")
+        tools = request.form.get("Tools").split("\n")
+        submit = {
+            "Name": request.form.get("Name"),
+            "Category_name": request.form.get("Category_name"),
+            "Description": request.form.get("Description"),
+            "Ingredients": ingredients,
+            "Preparation_steps": Preparation_steps,
+            "Tools": tools,
+            "Notes": request.form.get("Notes"),
+            "created_by": session["user"]
+        }
+        mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set": submit})
+        flash("Recipe Successfully Updated")
+        
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    categories = mongo.db.categories.find().sort("Category_name", 1)
+    return render_template("edit_recipe.html", recipe=recipe, categories=categories)
+    
 
-#This is the code for the register page that checks if the username already exists and if it does it will display an error message and if it doesn't it will add the username and password to the database and log the user in.
+#This is the code for the register page that checks if the username already exists and if it does it will display an error message and
+#if it doesn't it will add the username and password to the database and log the user in.
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -69,7 +97,9 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
-#This is the login function that checks the username and password against the database and if it matches it will log the user in and if it doesn't it will display an error message.
+
+#This is the login function that checks the username and password against the database and 
+#if it matches it will log the user in and if it doesn't it will display an error message.
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -93,19 +123,24 @@ def login():
     return render_template("login.html")    
 
 
+#This is the logout function that will log the user out and display a success message.
 @app.route("/logout")
 def logout():
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
 
-#this is the user profile page that displays the username of the user that is logged in, if the user is not logged in it will redirect them to the login page.
+
+#This is the user profile page that displays the username of the user that is logged in, 
+#if the user is not logged in it will redirect them to the login page. it also displays the recipes that the user has added to the database.
+#and allows the user to edit or delete the recipes.
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
-        return render_template("profile.html", username=username)
+        recipes = mongo.db.recipes.find({"created_by": session["user"]})
+        return render_template("profile.html", username=username, recipes=recipes)
     
     return redirect(url_for("login"))
 
