@@ -1,13 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
-
-<div class="container mt-5">
-    <form action="{{ url_for('add_recipe') }}" method="POST">
-        <h1 class="text-center">Add a New Recipe</h1>
-        <p class="text-center">Fill out the form below to add a new recipe to the database.</p>
+<header>
+    <h1 class="text-center">Add a New Recipe</h1>
+    <p class="text-center">Fill out the form below to add a new recipe to the database.</p>
+</header>
+<main>
+    <div class="container mt-5">
         <div class="form-group">
             <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
-            <select id="Category_name" name="Category_name" class="form-control validate" required>
+            <select id="Category_name" name="Category_name" class="form-control validate" required
+                aria-label="Select the style of food" title="Select the style of food">
                 <option value="" disabled selected>Choose your option</option>
                 {% for category in categories %}
                 <option value="{{category.Category_name}}">{{category.Category_name}}</option>
@@ -17,37 +19,48 @@
         <div class="form-group">
             <label for="Name"><i class="fas fa-clipboard"></i> Recipe Name:</label>
             <input type="text" id="Name" name="Name" class="form-control" minlength="6" maxlength="55"
-                placeholder=" Name your meal" required />
+                placeholder=" Name your meal" required aria-label="Enter the recipe name" title="Enter the recipe name">
         </div>
         <div class="form-group">
             <label for="Description"><i class="fas fa-info"></i> Description:</label>
             <input type="text" id="Description" name="Description" class="form-control" minlength="6" maxlength="55"
-                placeholder=" Tell is something about your meal" required />
+                placeholder=" Tell is something about your meal" required
+                aria-label="Enter a short description of the recipe" title="Enter a short description of the recipe">
         </div>
         <div class="form-group">
             <label for="Ingredients"><i class="fas fa-carrot"></i> Ingredients:</label>
             <textarea name="Ingredients" id="Ingredients" class="form-control" rows="10"
-                placeholder=" Add each ingredient on a new line" required></textarea>
+                placeholder=" Add each ingredient on a new line" required
+                aria-label="Enter the ingredients list, with each ingredient on a new line"
+                title="Enter the ingredients list, with each ingredient on a new line"></textarea>
         </div>
         <div class="form-group">
             <label for="preparation_steps"><i class="fas fa-book-open"></i> Preparation Steps:</label>
             <textarea name="Preparation_steps" id="Preparation_steps" class="form-control" rows="10"
-                placeholder=" Add each step on a new line" required></textarea>
+                placeholder=" Add each step on a new line" required
+                aria-label="Enter the preparation steps, with each step on a new line"
+                title="Enter the preparation steps, with each step on a new line"></textarea>
         </div>
         <div class="form-group">
             <label for="Tools"><i class="fas fa-tools"></i> Tools:</label>
             <textarea name="Tools" id="Tools" class="form-control" rows="5" maxlength="55"
-                placeholder=" Need anything special to make it?"></textarea>
+                placeholder=" Need anything special to make it?"
+                aria-label="Enter any special tools required for the recipe"
+                title="Enter any special tools required for the recipe"></textarea>
         </div>
         <div class="form-group">
             <label for="Notes"><i class="fas fa-sticky-note"></i> Notes:</label>
-            <textarea name="Notes" id="Notes" class="form-control" rows="5"
-                placeholder=" Anything we should know?"></textarea>
+            <textarea name="Notes" id="Notes" class="form-control" rows="5" placeholder=" Anything we should know?"
+                aria-label="Enter any additional notes or comments about the recipe"
+                title="Enter any additional notes or comments about the recipe"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" aria-label="Submit the form to add the recipe"
+            title="Submit the form to add the recipe">
             Add Recipe <i class="fas fa-plus-square"></i>
         </button>
-    </form>
-</div>
+
+        </form>
+    </div>
+</main>
 
 {% endblock %}
