@@ -74,7 +74,16 @@ def edit_recipe(recipe_id):
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("Category_name", 1)
     return render_template("edit_recipe.html", recipe=recipe, categories=categories)
-    
+
+
+#This is the code for the delete recipe ,it will delete the recipe from the database and display a success message.
+#then it will redirect the user to the recipes page.
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
+    flash("Recipe Successfully Deleted")
+    return redirect(url_for("get_recipes"))
+
 
 #This is the code for the register page that checks if the username already exists and if it does it will display an error message and
 #if it doesn't it will add the username and password to the database and log the user in.
