@@ -2,6 +2,18 @@
 
 {% block content %}
 
+<div class="align-center">
+    <form action="{{ url_for('search') }}" method="POST" class="form-inline my-3">
+        <label for="query" class="mr-2">Search:</label>
+        <input type="text" name="query" id="query" class="form-control mr-2" placeholder="Search" minlength="3"
+            required>
+        <button type="submit" class="btn btn-primary mr-2">Search</button>
+        <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">Show All</a>
+    </form>
+    <h1>Recipes</h1>
+</div>
+
+{% if recipes|length != 0 %}
 
 <div class="col-md-4 my-3">
     {% for recipe in recipes %}
@@ -32,5 +44,13 @@
     </div>
     {% endfor %}
 </div>
+{% else %}
+<div class="col-md-4 my-3">
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">No recipes found</h5>
+        </div>
+    </div>
+    {% endif %}
 
-{% endblock %}
+    {% endblock %}
