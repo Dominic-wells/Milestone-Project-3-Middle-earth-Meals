@@ -1,68 +1,80 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container mt-5">
-    <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
-        <h1 class="text-center">Edit a Recipe</h1>
-        <p class="text-center">Just change want you want to change.</p>
-        <div class="form-group">
-            <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
-            <select id="Category_name" name="Category_name" class="form-control validate" required>
-                <option value="" disabled>Choose your option</option>
-                {% for category in categories %}
-                {% if category.Category_name == recipe.Category_name %}
-                <option value="{{category.Category_name}}" selected>{{category.Category_name}}</option>
-                {% else %}
-                <option value="{{category.Category_name}}">{{category.Category_name}}</option>
-                {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="Name"><i class="fas fa-clipboard"></i> Recipe Name:</label>
-            <input type="text" id="Name" name="Name" class="form-control" minlength="6" maxlength="55"
-                value="{{recipe.Name}}" placeholder=" Rename your meal" required />
-        </div>
-        <div class="form-group">
-            <label for="Description"><i class="fas fa-info"></i> Description:</label>
-            <input type="text" id="Description" name="Description" class="form-control" minlength="6" maxlength="55"
-                value="{{recipe.Description}}" placeholder=" Tell is something about your meal" required />
-        </div>
-        <div class="form-group">
-            <label for="Ingredients"><i class="fas fa-carrot"></i> Ingredients:</label>
-            <textarea name="Ingredients" id="Ingredients" class="form-control" rows="10"
-                placeholder=" Add each ingredient on a new line" required>
+  <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
+    <h1 class="text-center">Edit a Recipe</h1>
+    <p class="text-center">Just change want you want to change.</p>
+    <div class="form-group">
+      <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
+      <select id="Category_name" name="Category_name" class="form-control validate" required
+        aria-label="Select the style of food" title="Select the style of food">
+        <option value="" disabled>Choose your option</option>
+        {% for category in categories %} {% if category.Category_name ==
+        recipe.Category_name %}
+        <option value="{{category.Category_name}}" selected>
+          {{category.Category_name}}
+        </option>
+        {% else %}
+        <option value="{{category.Category_name}}">
+          {{category.Category_name}}
+        </option>
+        {% endif %} {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="Name"><i class="fas fa-clipboard"></i> Recipe Name:</label>
+      <input type="text" id="Name" name="Name" class="form-control" minlength="6" maxlength="55" value="{{recipe.Name}}"
+        placeholder=" Rename your meal" aria-label="Enter the new recipe name" title="Enter the new recipe name"
+        required />
+    </div>
+    <div class="form-group">
+      <label for="Description"><i class="fas fa-info"></i> Description:</label>
+      <input type="text" id="Description" name="Description" class="form-control" minlength="6" maxlength="55"
+        value="{{recipe.Description}}" placeholder=" Tell is something about your meal"
+        aria-label="Enter the new description" title="Enter the new description" required />
+    </div>
+    <div class="form-group">
+      <label for="Ingredients"><i class="fas fa-carrot"></i> Ingredients:</label>
+      <textarea name="Ingredients" id="Ingredients" class="form-control" rows="10"
+        placeholder=" Add each ingredient on a new line" aria-label="Enter the new ingredients"
+        title="Enter the new ingredients" required>
                 {{-recipe.Ingredients-}}
             </textarea>
-        </div>
-        <div class="form-group">
-            <label for="preparation_steps"><i class="fas fa-book-open"></i> Preparation Steps:</label>
-            <textarea name="Preparation_steps" id="Preparation_steps" class="form-control" rows="10"
-                placeholder=" Add each step on a new line" required>
+    </div>
+    <div class="form-group">
+      <label for="preparation_steps"><i class="fas fa-book-open"></i> Preparation Steps:</label>
+      <textarea name="Preparation_steps" id="Preparation_steps" class="form-control" rows="10"
+        placeholder=" Add each step on a new line" aria-label="Enter the new preparation steps"
+        title="Enter the new preparation steps" required>
                 {{-recipe.Preparation_steps-}}
             </textarea>
-        </div>
-        <div class="form-group">
-            <label for="Tools"><i class="fas fa-tools"></i> Tools:</label>
-            <textarea name="Tools" id="Tools" class="form-control" rows="5"
-                placeholder=" Need anything special to make it?">
+    </div>
+    <div class="form-group">
+      <label for="Tools"><i class="fas fa-tools"></i> Tools:</label>
+      <textarea name="Tools" id="Tools" class="form-control" rows="5" placeholder=" Need anything special to make it?"
+        aria-label="Enter any tools changes" title="Enter any tools changes">
                 {{-recipe.Tools-}}
             </textarea>
-        </div>
-        <div class="form-group">
-            <label for="Notes"><i class="fas fa-sticky-note"></i> Notes:</label>
-            <textarea name="Notes" id="Notes" class="form-control" rows="5" placeholder=" Anything we should know?">
+    </div>
+    <div class="form-group">
+      <label for="Notes"><i class="fas fa-sticky-note"></i> Notes:</label>
+      <textarea name="Notes" id="Notes" class="form-control" rows="5" placeholder=" Anything we should know?"
+        aria-label="Enter any note changes" title="Enter any note changes">
                 {{-recipe.Notes-}}
             </textarea>
-        </div>
-        <div align="center">
-            <a href="{{ url_for('get_recipes') }}" class="btn btn-danger">Cancel</a>
-            <button type="submit" class="btn btn-primary">
-                Edit Recipe <i class="fas fa-plus-square"></i>
-            </button>
-        </div>
-    </form>
+    </div>
+    <div class="form-group">
+      <label for="image_url"><i class="fas fa-camera"></i> Image URL:</label>
+      <input type="text" name="image_url" id="image_url" class="form-control"
+        placeholder="please include the full address" value="{{recipe.image_url}}" />
+    </div>
+    <div align=" center">
+      <a href="{{ url_for('get_recipes') }}" class="btn btn-danger">Cancel</a>
+      <button type="submit" class="btn btn-primary">
+        Edit Recipe <i class="fas fa-plus-square"></i>
+      </button>
+    </div>
+  </form>
 </div>
-
 
 {% endblock %}
