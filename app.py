@@ -53,7 +53,8 @@ def add_recipe():
             "Preparation_steps": Preparation_steps,
             "Tools": tools,
             "Notes": request.form.get("Notes"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "image_url": request.form.get("image_url")
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
@@ -77,7 +78,8 @@ def edit_recipe(recipe_id):
             "Preparation_steps": Preparation_steps,
             "Tools": tools,
             "Notes": request.form.get("Notes"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "image_url": request.form.get("image_url")
         }
         mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)}, {"$set": submit})
         flash("Recipe Successfully Updated")
