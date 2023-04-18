@@ -26,6 +26,17 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+#This is the code for searching the databases recipes name and description for the query entered by the user.
+#it will search the database for the query and display the results.
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    if not query:
+        flash("Please enter a search query.")
+        return redirect(url_for("get_recipes"))
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
 #This is the code for adding a recipe to the database, it will split the ingredients and preparation steps into a list and
 #add them to the database. Once the recipe is added it will display a success message and redirect the user to the recipes page.
 @app.route("/add_recipe", methods=["GET", "POST"])
@@ -106,6 +117,25 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
+
+#This is the code for changing the passwordit will check if the old password matches
+#the password in the database and if it does it will update the password
+@app.route("/change_password", methods=["GET", "POST"])
+def change_password():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": session["user"]})
+        if check_password_hash(
+            existing_user["password"], request.form.get("old_password")):
+            mongo.db.users.update_one(
+                {"username": session["user"]},
+                {"$set": {"password": generate_password_hash(request.form.get("new_password"))}})
+            flash("Password Successfully Changed")
+            return redirect(url_for("profile", username=session["user"]))
+        else:
+            flash("Incorrect Password")
+            return redirect(url_for("change_password"))
+    return render_template("change_password.html")
 
 #This is the login function that checks the username and password against the database and 
 #if it matches it will log the user in and if it doesn't it will display an error message.
