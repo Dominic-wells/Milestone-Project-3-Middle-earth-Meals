@@ -57,12 +57,25 @@
                     aria-label="Enter any additional notes or comments about the recipe"
                     title="Enter any additional notes or comments about the recipe"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" aria-label="Submit the form to add the recipe"
+            <div class="form-group">
+                <label for="image_url"><i class="fas fa-camera"></i> Image URL:</label>
+                <input type="text" name="image_url" id="image_url" class="form-control"
+                    placeholder="Please include the full address" aria-label="Enter the image URL for the recipe"
+                    title="Enter the image URL for the recipe">
+            </div>
+            <a href="{{ url_for('get_recipes') }}" class="btn btn-danger">Cancel</a>
+            <button type=" submit" class="btn btn-primary" aria-label="Submit the form to add the recipe"
                 title="Submit the form to add the recipe">
                 Add Recipe <i class="fas fa-plus-square"></i>
             </button>
+        </div>
+
     </form>
     </div>
+
+    <footer>
+        <p class="Middle Earth Meals">© 2023 - All Rights Reserved</p>
+    </footer>
 </main>
 
 {% endblock %}
