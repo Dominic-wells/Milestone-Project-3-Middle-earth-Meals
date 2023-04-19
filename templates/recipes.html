@@ -1,59 +1,67 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="align-center">
     <form action="{{ url_for('search') }}" method="POST" class="form-inline my-3">
         <label for="query" class="mr-2">Search:</label>
         <input type="text" name="query" id="query" class="form-control mr-2" placeholder="Search" minlength="3"
-            required>
+            required />
         <button type="submit" class="btn btn-primary mr-2">Search</button>
         <a href="{{ url_for('get_recipes') }}" class="btn btn-primary">Show All</a>
     </form>
     <h1>Recipes</h1>
 </div>
 
-{% if recipes|length != 0 %}
-
-<div class="col-md-4 my-3">
+<div class="row">
     {% for recipe in recipes %}
-    <div class="card">
-        {% if recipe.image_url %}
-        <img src="{{ recipe.image_url }}" class="card-img-top" alt="{{ recipe.Name }}">
-        {% endif %}
-        <div class="card-body">
-            <h5 class="card-title">{{ recipe.Name }}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Category_name }}</h6>
-            <div class="card-text">
-                <strong>Description:</strong> {{ recipe.Description }}<br>
-                <strong>Ingredients:</strong><br>
-                {% for ingredient in recipe.Ingredients %}
-                - {{ ingredient }}<br>
-                {% endfor %}
-                <strong>Preparation Steps:</strong><br>
-                <ol>
-                    {% for step in recipe.Preparation_steps %}
-                    <li>{{ step }}</li>
+    <div class="col-md-4 my-3">
+        <div class="card h-100">
+            <div class="card-body">
+                {% if recipe.image_url %}
+                <img src="{{ recipe.image_url }}" class="card-img-top mb-3" alt="{{ recipe.Name }}" />
+                {% else %} {% if recipe.Category_name == "Elf" %}
+                <img src="/static/images/Elf.png" class="card-img-top mb-3" alt="{{ recipe.Name }}" />
+                {% elif recipe.Category_name == "Dwarf" %}
+                <img src="/static/images/Dwarf.png" class="card-img-top mb-3" alt="{{ recipe.Name }}" />
+                {% elif recipe.Category_name == "Man" %}
+                <img src="/static/images/Man.png" class="card-img-top mb-3" alt="{{ recipe.Name }}" />
+                {% elif recipe.Category_name == "Hobbit" %}
+                <img src="/static/images/Hobbit.png" class="card-img-top mb-3" alt="{{ recipe.Name }}" />
+                {% elif recipe.Category_name == "Chinese" %} {% endif %} {% endif %}
+                <h5 class="card-title">{{ recipe.Name }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{ recipe.Category_name }}
+                </h6>
+                <div class="card-text">
+                    <strong>Description:</strong> {{ recipe.Description }}<br />
+                    <strong>Ingredients:</strong><br />
+                    {% for ingredient in recipe.Ingredients %} - {{ ingredient }}<br />
                     {% endfor %}
-                </ol>
-                <strong>Required Tools:</strong><br>
-                {% for tool in recipe.Tools %}
-                - {{ tool }}<br>
-                {% endfor %}
-                <strong>Notes:</strong> {{ recipe.Notes }}<br>
-                <strong>By:</strong> {{ recipe.created_by }}<br>
+                    <strong>Preparation Steps:</strong><br />
+                    <ol>
+                        {% for step in recipe.Preparation_steps %}
+                        <li>{{ step }}</li>
+                        {% endfor %}
+                    </ol>
+                    <strong>Required Tools:</strong><br />
+                    {% for tool in recipe.Tools %} - {{ tool }}<br />
+                    {% endfor %}
+                    <strong>Notes:</strong> {{ recipe.Notes }}<br />
+                    <strong>By:</strong> {{ recipe.created_by }}<br />
+                </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
-{% else %}
-<div class="col-md-4 my-3">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">No recipes found</h5>
+
+{% if recipes|length == 0 %}
+<div class="row">
+    <div class="col-md-4 my-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">No recipes found</h5>
+            </div>
         </div>
     </div>
-    {% endif %}
-
-    {% endblock %}
+</div>
+{% endif %} {% endblock %}
