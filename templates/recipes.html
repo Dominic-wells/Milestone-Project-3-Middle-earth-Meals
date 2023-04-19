@@ -18,6 +18,9 @@
 <div class="col-md-4 my-3">
     {% for recipe in recipes %}
     <div class="card">
+        {% if recipe.image_url %}
+        <img src="{{ recipe.image_url }}" class="card-img-top" alt="{{ recipe.Name }}">
+        {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{ recipe.Name }}</h5>
             <h6 class="card-subtitle mb-2 text-muted">{{ recipe.Category_name }}</h6>
