@@ -1,33 +1,35 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <div class="container">
     <h3 class="text-center my-4">Register</h3>
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <form method="POST" action="{{ url_for('register') }}">
+            <form method="POST" action="{{ url_for('register') }}" aria-label="Registration Form">
                 <div class="form-group">
                     <label for="username"><i class="fa fa-user prefix"></i> Username</label>
                     <input type="text" class="form-control" id="username" name="username" minlength="5" maxlength="16"
-                        pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        pattern="^[a-zA-Z0-9]{5,15}$" required placeholder="Enter your username" />
                 </div>
                 <div class="form-group">
                     <label for="password"><i class="fa fa-lock prefix"></i> Password</label>
                     <input type="password" class="form-control" id="password" name="password" minlength="5"
-                        maxlength="16" pattern="^[a-zA-Z0-9]{5,15}$" required>
+                        maxlength="16" pattern="^[a-zA-Z0-9]{5,15}$" required placeholder="Enter your password" />
                 </div>
                 <div class="form-group">
                     <label for="confirm_password"><i class="fa fa-lock prefix"></i> Confirm Password</label>
-                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                    <input type="password" class="form-control" id="confirm_password" name="confirm_password" required
+                        placeholder="Confirm your password" />
                 </div>
-                <button type="submit" class="btn btn-primary"><i class="fa fa-user-plus mr-2"></i>Register</button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-user-plus mr-2"></i>Register
+                </button>
             </form>
         </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-12">
-        <p class="text-center">Already Registered?
+        <p class="text-center">
+            Already Registered?
             <a href="{{ url_for('login') }}">Log In</a>
         </p>
     </div>
