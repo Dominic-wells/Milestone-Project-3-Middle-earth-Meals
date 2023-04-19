@@ -12,3 +12,12 @@ body {
 .text-shadow {
     text-shadow: 0 0 1px #000;
 }
+
+
+.custom-card {
+
+    background-image: url("/static/images/card-background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
