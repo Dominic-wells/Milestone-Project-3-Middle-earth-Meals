@@ -20,6 +20,10 @@ mongo = PyMongo(app)
 
 
 @app.route("/")
+def homepage():
+    return render_template("index.html")
+
+#This is the route for the recipes page, it will display all the recipes in the database.
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
