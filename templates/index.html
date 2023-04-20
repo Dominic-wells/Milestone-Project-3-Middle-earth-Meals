@@ -1,46 +1,26 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Middle-earth Meals</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Recipes</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-{% for recipes in recipes%}
-{{ recipes.Name }}<br>
-{{ recipes.Style }}<br>
-{{ recipes.Ingredients }}<br>
-{{ recipes.Preparation_steps }}<br>
-{{ recipes.Tools }}}<br>
-{{ recipes.Notes}}<br>
-{% endfor %}
-    <main>
-        <h2>About Us</h2>
-        <p>At Middle-earth Meals, we strive to bring the flavors of Tolkien's world to your kitchen. Our recipes are inspired by the dishes enjoyed by hobbits, elves, dwarves, and more, and we're always experimenting with new ways to bring the magic of Middle-earth to your table.</p>
-        <a href="#" class="button">Learn More</a>
-      </section>
-    </main>
-    <footer>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Recipes</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <p>&copy; 2023 Middle-earth Meals. All rights reserved.</p>
-    </footer>
-  </body>
-</html>
+{% extends "base.html" %} {% block content %}
+
+
+
+
+<div class="typewriter">
+  <h3>Welcome to Middle Earth Meals,
+    a realm where the magic of Tolkien's enchanting world comes to life in your kitchen! </h3>
+</div>
+
+<section>
+  <div class="col-lg-6 Recipe Archives semi-transparent">
+    <h4>Embark on a culinary journey through the mystical lands of hobbits, elves, and dwarves, as you explore a
+      treasure trove of Lord of the Rings-inspired recipes.
+
+      From the rustic charm of the Shire's hearty meals to the ethereal elegance of Elvish feasts, discover the flavors
+      of Middle Earth that will delight your taste buds and transport you to the heart of J.R.R. Tolkien's legendary
+      world. Gather your fellowship and forge a new path in the realm of epicurean delights. Adventure awaits, and so do
+      the delectable dishes that will make your table the envy of all in Middle Earth.
+
+      Let the quest for culinary mastery begin, and may the flavors be ever in your favor!</h4>
+  </div>
+</section>
+
+
+{% endblock %}
