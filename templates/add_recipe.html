@@ -1,12 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<header>
-    <h1 class="text-center">Add a New Recipe</h1>
-    <p class="text-center">Fill out the form below to add a new recipe to the database.</p>
-</header>
 <main>
     <form method="POST" action="{{ url_for('add_recipe') }}">
-        <div class="container mt-5">
+        <div class="container mt-5 form-background">
+            <h1 class="text-center">Add a New Recipe</h1>
+            <p class="text-center">Fill out the form below to add a new recipe to the Website.</p>
             <div class="form-group">
                 <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
                 <select id="Category_name" name="Category_name" class="form-control validate" required
@@ -73,9 +71,6 @@
     </form>
     </div>
 
-    <footer>
-        <p class="Middle Earth Meals">© 2023 - All Rights Reserved</p>
-    </footer>
 </main>
 
 {% endblock %}
