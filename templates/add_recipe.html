@@ -1,10 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 <main>
+
+    <!-- Form for adding recipes-->
     <form method="POST" action="{{ url_for('add_recipe') }}">
         <div class="container mt-5 form-background">
             <h1 class="text-center">Add a New Recipe</h1>
             <p class="text-center">Fill out the form below to add a new recipe to the Website.</p>
+            <!--Picking the catergory -->
             <div class="form-group">
                 <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
                 <select id="Category_name" name="Category_name" class="form-control validate" required
@@ -15,12 +18,14 @@
                     {% endfor %}
                 </select>
             </div>
+            <!--Adding the name-->
             <div class="form-group">
                 <label for="Name"><i class="fas fa-clipboard"></i> Recipe Name:</label>
                 <input type="text" id="Name" name="Name" class="form-control" minlength="6" maxlength="55"
                     placeholder=" Name your meal" required aria-label="Enter the recipe name"
                     title="Enter the recipe name">
             </div>
+            <!--Adding the description-->
             <div class="form-group">
                 <label for="Description"><i class="fas fa-info"></i> Description:</label>
                 <input type="text" id="Description" name="Description" class="form-control" minlength="6" maxlength="55"
@@ -28,6 +33,7 @@
                     aria-label="Enter a short description of the recipe"
                     title="Enter a short description of the recipe">
             </div>
+            <!--Adding the ingredients-->
             <div class="form-group">
                 <label for="Ingredients"><i class="fas fa-carrot"></i> Ingredients:</label>
                 <textarea name="Ingredients" id="Ingredients" class="form-control" rows="10"
@@ -35,6 +41,7 @@
                     aria-label="Enter the ingredients list, with each ingredient on a new line"
                     title="Enter the ingredients list, with each ingredient on a new line"></textarea>
             </div>
+            <!--Adding the preparation steps-->
             <div class="form-group">
                 <label for="preparation_steps"><i class="fas fa-book-open"></i> Preparation Steps:</label>
                 <textarea name="Preparation_steps" id="Preparation_steps" class="form-control" rows="10"
@@ -42,6 +49,7 @@
                     aria-label="Enter the preparation steps, with each step on a new line"
                     title="Enter the preparation steps, with each step on a new line"></textarea>
             </div>
+            <!--Adding the tools-->
             <div class="form-group">
                 <label for="Tools"><i class="fas fa-tools"></i> Tools:</label>
                 <textarea name="Tools" id="Tools" class="form-control" rows="5"
@@ -49,25 +57,27 @@
                     aria-label="Enter any special tools required for the recipe"
                     title="Enter any special tools required for the recipe"></textarea>
             </div>
+            <!--Adding the notes-->
             <div class="form-group">
                 <label for="Notes"><i class="fas fa-sticky-note"></i> Notes:</label>
                 <textarea name="Notes" id="Notes" class="form-control" rows="5" placeholder=" Anything we should know?"
                     aria-label="Enter any additional notes or comments about the recipe"
                     title="Enter any additional notes or comments about the recipe"></textarea>
             </div>
+            <!--Adding the image-->
             <div class="form-group">
                 <label for="image_url"><i class="fas fa-camera"></i> Image URL:</label>
                 <input type="text" name="image_url" id="image_url" class="form-control"
                     placeholder="Please include the full address" aria-label="Enter the image URL for the recipe"
                     title="Enter the image URL for the recipe">
             </div>
+            <!--Submitting to database-->
             <a href="{{ url_for('get_recipes') }}" class="btn btn-danger">Cancel</a>
             <button type=" submit" class="btn btn-primary" aria-label="Submit the form to add the recipe"
                 title="Submit the form to add the recipe">
                 Add Recipe <i class="fas fa-plus-square"></i>
             </button>
         </div>
-
     </form>
     </div>
 
