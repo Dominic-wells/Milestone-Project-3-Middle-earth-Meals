@@ -32,4 +32,6 @@ The Middle Earth Meals website is designed to evoke the fantasy atmosphere of J.
 
 A Fantasy color theme was choosen basied on the Brand logo
 
-![Color theme] (../images/color theme.png)
+![Color Theme](/static/images/color%20theme.png)
+
+![Test Theme](/static/images/testtype.png)
