@@ -1,10 +1,12 @@
 {% extends "base.html" %} {% block content %}
 
+<!--The user can fill out this form to edit their recipes-->
 <div class="container mt-5 form-background">
   <form action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" method="POST">
     <h1 class="text-center">Edit a Recipe</h1>
     <p class="text-center">Just change want you want to change.</p>
     <div class="form-group">
+      <!--Pick the new Category-->
       <label for="Category_name"><i class="fas fa-utensils"></i> Style Of Food:</label>
       <select id="Category_name" name="Category_name" class="form-control validate" required
         aria-label="Select the style of food" title="Select the style of food">
@@ -21,54 +23,54 @@
         {% endif %} {% endfor %}
       </select>
     </div>
+    <!--Edit the name-->
     <div class="form-group">
       <label for="Name"><i class="fas fa-clipboard"></i> Recipe Name:</label>
       <input type="text" id="Name" name="Name" class="form-control" minlength="6" maxlength="55" value="{{recipe.Name}}"
         placeholder=" Rename your meal" aria-label="Enter the new recipe name" title="Enter the new recipe name"
         required />
     </div>
+    <!--Edit the description-->
     <div class="form-group">
       <label for="Description"><i class="fas fa-info"></i> Description:</label>
       <input type="text" id="Description" name="Description" class="form-control" minlength="6" maxlength="55"
         value="{{recipe.Description}}" placeholder=" Tell is something about your meal"
         aria-label="Enter the new description" title="Enter the new description" required />
     </div>
+    <!--Edit the ingredients-->
     <div class="form-group">
       <label for="Ingredients"><i class="fas fa-carrot"></i> Ingredients:</label>
       <textarea name="Ingredients" id="Ingredients" class="form-control" rows="10"
         placeholder=" Add each ingredient on a new line" aria-label="Enter the new ingredients"
-        title="Enter the new ingredients" required>
-                {{-recipe.Ingredients-}}
-            </textarea>
+        title="Enter the new ingredients" required>{{ "\n".join(recipe.Ingredients) }}</textarea>
     </div>
+    <!--Edit the preparation steps-->
     <div class="form-group">
       <label for="preparation_steps"><i class="fas fa-book-open"></i> Preparation Steps:</label>
       <textarea name="Preparation_steps" id="Preparation_steps" class="form-control" rows="10"
         placeholder=" Add each step on a new line" aria-label="Enter the new preparation steps"
-        title="Enter the new preparation steps" required>
-                {{-recipe.Preparation_steps-}}
-            </textarea>
+        title="Enter the new preparation steps" required>{{ "\n".join(recipe.Preparation_steps) }}</textarea>
     </div>
+    <!--Edit the tools-->
     <div class="form-group">
       <label for="Tools"><i class="fas fa-tools"></i> Tools:</label>
       <textarea name="Tools" id="Tools" class="form-control" rows="5" placeholder=" Need anything special to make it?"
-        aria-label="Enter any tools changes" title="Enter any tools changes">
-                {{-recipe.Tools-}}
-            </textarea>
+        aria-label="Enter any tools changes" title="Enter any tools changes">{{ "\n".join(recipe.Tools) }}</textarea>
     </div>
+    <!--Edit the notes-->
     <div class="form-group">
       <label for="Notes"><i class="fas fa-sticky-note"></i> Notes:</label>
       <textarea name="Notes" id="Notes" class="form-control" rows="5" placeholder=" Anything we should know?"
-        aria-label="Enter any note changes" title="Enter any note changes">
-                {{-recipe.Notes-}}
-            </textarea>
+        aria-label="Enter any note changes" title="Enter any note changes">{{-recipe.Notes-}}</textarea>
     </div>
+
     <div class="form-group">
       <label for="image_url"><i class="fas fa-camera"></i> Image URL:</label>
       <input type="text" name="image_url" id="image_url" class="form-control"
         placeholder="please include the full address" value="{{recipe.image_url}}" />
     </div>
-    <div align=" center">
+    <!--Submit or exit-->
+    <div align="center">
       <a href="{{ url_for('profile', username=session['user']) }}" class="btn btn-danger">Cancel</a>
       <button type="submit" class="btn btn-primary">
         Edit Recipe <i class="fas fa-plus-square"></i>
