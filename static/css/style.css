@@ -1,5 +1,5 @@
 body {
-    background-image: url("/static/images/Dinnertable.png");
+    background-image: url("/static/images/Dinnertable.webp");
     background-size: cover;
     position: relative;
     color: #000;
@@ -34,7 +34,6 @@ h5 {
 }
 
 
-
 /* Navbar */
 
 nav {
@@ -55,7 +54,6 @@ nav {
 .navbar-brand {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
     width: 100%;
 }
 
@@ -127,29 +125,6 @@ typed-text-container {
     background-color: rgba(255, 255, 255, 0.5);
     font-family: 'Bilbo Swash Caps', sans-serif;
     padding: 10px;
-}
-
-.typewriter h3 {
-    background-color: rgba(255, 255, 255, 0.5);
-    font-family: 'Bilbo Swash Caps', sans-serif;
-    padding: 10px;
-    overflow: hidden;
-    white-space: pre-wrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    animation:
-        typing 3.5s steps(40, end);
-}
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
 }
 
 /* profile */
