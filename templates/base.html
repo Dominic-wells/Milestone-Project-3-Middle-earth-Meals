@@ -38,7 +38,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url_for('homepage') }}" alt="Middle Earth Meals">
+            <a class="navbar-brand" href="{{ url_for('homepage') }}">
                 <img src="/static/images/brandbanner.png" class="img-fluid" alt="Middle Earth Meals">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
@@ -84,7 +84,7 @@
                     <form action="{{ url_for('search') }}" method="POST" class="d-flex my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" name="query" id="query" placeholder="Search"
                             aria-label="Search" minlength="3" required />
-                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
                     </form>
                 </div>
             </div>
@@ -102,7 +102,7 @@
         {% endfor %} {% endif %} {% endwith %}
     </section>
     <main class="container">{% block content %} {% endblock %}</main>
-    <!-- Footer -->q
+    <!-- Footer -->
     <footer class="mt-auto">
         <p>Middle Earth Meals © 2023 - All Rights Reserved</p>
     </footer>
