@@ -72,3 +72,192 @@ Balsamiq original Design:
 - **User Login:** Users can log in to the website using their registered username and password.
 - **User Logout:** Users can log out of their account.
 - **User Profile:** Displays the user's profile page with their username and the recipes they have added to the website. Users can also edit or delete their recipes from their profile page.
+
+### Features Left to Implement
+
+- Rating system: Allow users to rate and review recipes.
+- Ingredient substitution suggestions: Provide alternative ingredients for users with dietary restrictions or preferences.
+
+## Testing
+
+### Manual Testing
+
+I used manual testing to ensure that the website functions as expected and provides a smooth user experience.
+
+### Manual Testing Plan
+
+#### Test Scenarios
+
+1. Homepage Accessibility
+2. Recipe Browsing
+3. Recipe Search
+4. User Registration
+5. Add Recipe
+6. Edit Recipe
+7. Delete Recipe
+8. Change Password
+9. User Login
+10. User Logout
+
+#### Test Steps, Expected Results, and Success Criteria
+
+**1\. Homepage Accessibility**
+
+- Steps:
+  - Access the website's homepage.
+- Expected Results:
+  - The homepage is displayed with a welcome message.
+- Success Criteria:
+  - The homepage is accessible and displays the welcome message correctly.
+
+* **PASS**
+
+<details><summary>The website is accessiable and the homepage is displayed</summary><img src="/static/images/memtesting/Test1 Homescreen"></details>
+
+**2\. Recipe Browsing**
+
+- Steps:
+  - Navigate to the recipes page.
+  - Browse the displayed recipes.
+- Expected Results:
+  - All recipes in the database are displayed and properly formatted.
+- Success Criteria:
+  - The recipe browsing feature works as expected
+
+* **PASS**
+
+<details><summary>The recipes are viewable</summary><img src="/static/images/memtesting/Test2 Recipe Viewing"></details><br/>
+
+**3\. Recipe Search**
+
+- Steps:
+  - Enter various search queries (valid and invalid inputs) in the search bar.
+  - Review the search results.
+- Expected Results:
+  - Relevant recipes are displayed based on the search query.
+  - Appropriate error messages are shown when necessary.
+- Success Criteria:
+  - The search functionality works correctly and provides relevant results.
+
+* **PASS**
+
+<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/memtesting/Test3 No Recipes Found"></details><br/>
+
+**4\. User Registration**
+
+- Steps:
+  - Access the "Register" page.
+  - Create a new user account with a unique username and password.
+  - Verify successful registration by accessing the user's profile page.
+- Expected Results:
+  - The new user account is created, and the user can access their profile page.
+- Success Criteria:
+  - The user registration process works as expected.
+
+* **PASS**
+
+<details><summary>User Registration</summary><img src="/static/images/memtesting/Test4a Registration"></details>
+<details><summary>User Profile</summary><img src="/static/images/memtesting/Test4b Registration"></details><br/>
+
+**5\. Add Recipe**
+
+- Steps:
+  - Log in with a valid user account.
+  - Navigate to the "Add Recipe" page.
+  - Submit a complete recipe form with valid information.
+  - Check the recipes page for the added recipe.
+- Expected Results:
+  - The new recipe is successfully added to the website and displayed on the recipes page.
+- Success Criteria:
+  - The add recipe feature works as expected.
+
+* **PASS**
+
+<details><summary>Add Recipe Page</summary><img src="/static/images/memtesting/Test5a Add Recipe.png"></details>
+<details><summary>Inputting Recipe</summary><img src="/static/images/memtesting/Test5b Add Recipe.png"></details>
+<details><summary>Successfully Added Message</summary><img src="/static/images/memtesting/Test5c Add Recipe.png"></details>
+<details><summary>Recipe on Screen</summary><img src="/static/images/memtesting/Test5d Add Recipe.png"></details><br/>
+
+**6\. Edit Recipe**
+
+- Steps:
+  - Log in with a valid user account.
+  - Select an existing recipe.
+  - Modify the recipe information and submit the form.
+  - Verify the changes on the website.
+- Expected Results:
+  - The edited recipe is saved, and the changes are reflected on the website.
+- Success Criteria:
+  - The edit recipe feature works as expected.
+
+* **PASS**
+
+<details><summary>Edit Recipe Page </summary><img src="/static/images/memtesting/Test6a Edit.png"></details>
+<details><summary>Editing Recipe </summary><img src="/static/images/memtesting/Test6b Edit.png"></details>
+<details><summary>Successfully updated Message</summary><img src="/static/images/memtesting/Test6c Edit.png"></details>
+<details><summary>Edit on Screen</summary><img src="/static/images/memtesting/Test6d Edit.png"></details><br/>
+
+**7\. Delete Recipe**
+
+- Steps:
+  - Log in with a valid user account.
+  - Select a recipe to delete.
+  - Confirm the deletion.
+  - Verify that the recipe is removed from the website.
+- Expected Results:
+  - The selected recipe is successfully deleted and no longer appears on the website.
+- Success Criteria: - The delete recipe feature works as expected.
+
+* **PASS**
+
+  <details><summary>Recipe to delete </summary><img src="/static/images/memtesting/Test7a Deleted.png"></details>
+  <details><summary>Recipe delete button </summary><img src="/static/images/memtesting/Test7b Deleted.png"></details>
+  <details><summary>Successfully Deleted Message</summary><img src="/static/images/memtesting/Test7c Deleted.png"></details>
+  <br/>
+
+**8\. Change Password**
+
+- Steps:
+  - Log in with an existing user account.
+  - Access the "Change Password" page.
+  - Enter the old password and a new password.
+  - Submit the form and verify the new password by logging in again.
+- Expected Results:
+  - The new password works, and the old password is no longer valid.
+- Success Criteria: - The change password feature works as expected.
+
+* **PASS**
+
+  <details><summary>Change password button</summary><img src="/static/images/memtesting/Test8a Change Password.png"></details>
+  <details><summary>Change password form</summary><img src="/static/images/memtesting/Test8b Change Password.png"></details>
+  <details><summary>Successfully changed password Message</summary><img src="/static/images/memtesting/Test8c Change Password.png"></details>
+  <details><summary>Incorrect Username and/or Password Message</summary><img src="/static/images/memtesting/Test8d Change Password.png"></details>
+  <br/>
+
+**9\. User Login**
+
+- Steps:
+  - Access the "Login"
+  - Enter a valid username and password.
+  - Verify that the user is successfully logged in and redirected to their profile page.
+- Expected Results:
+  - The user is able to log in and access their profile page.
+- Success Criteria: - The user login process works as expected.
+
+* **PASS**
+
+  <details><summary>User login</summary><img src="/static/images/memtesting/Test9a User Loggin.png"></details>
+
+**10\. User Logout**
+
+- Steps:
+  - Log in with a valid user account.
+  - Click on the "Logout" button or link.
+  - Verify that the user is logged out and redirected to the login page.
+- Expected Results:
+  - The user is successfully logged out and can no longer access their profile page.
+- Success Criteria: - The user logout process works as expected.
+
+* **PASS**
+
+  <details><summary>User logout</summary><img src="/static/images/memtesting/Test10a Logged Out.png></details>
