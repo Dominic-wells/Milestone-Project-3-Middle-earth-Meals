@@ -6,17 +6,14 @@
 </div>
 <section>
     <div class="col-lg-6 Recipe Archives semi-transparent">
-        <p>Welcome to the Recipe Archives of Middle Earth Meals, where the culinary wisdom of the ages is preserved
-            for
-            your
-            gastronomic pleasure. Here, you will find an extensive collection of Lord of the Rings-inspired dishes
-            that
-            span
-            the breadth of Tolkien's wondrous world.</p>
+        <p>Welcome to the Recipe Archives of Middle Earth Meals, where the culinary wisdom of the ages is preserved for
+            your gastronomic pleasure. Here, you will find an extensive collection of Lord of the Rings-inspired dishes
+            that span the breadth of Tolkien's wondrous world.</p>
     </div>
 </section>
 
-
+<!--These cards display the recipes on the reciples page the display img will change depending 
+if the user choose one, if they didnt one will be added dpedniong on what category they picked-->
 <div class="row">
     {% for recipe in recipes %}
     <div class="col-sm-12 col-md-6 col-lg-4 my-3">
@@ -33,7 +30,7 @@
                 {% elif recipe.Category_name == "Hobbit" %}
                 <img src="/static/images/Hobbit.png" class="card-img-top mb-3 card-img-custom"
                     alt="{{ recipe.Name }}" />
-                {% elif recipe.Category_name == "Chinese" %} {% endif %} {% endif %}
+                {% endif %} {% endif %}
                 <h5 class="card-title">{{ recipe.Name }}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
                     {{ recipe.Category_name }}
@@ -60,7 +57,7 @@
     </div>
     {% endfor %}
 </div>
-
+<!--If no recipes are found in the search the user will see an error "No recipes found"-->
 {% if recipes|length == 0 %}
 <div class="row">
     <div class="col-md-4 my-3">
