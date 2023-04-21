@@ -28,10 +28,31 @@ The primary objective of this project is to create a seamless experience for use
 
 The Middle Earth Meals website is designed to evoke the fantasy atmosphere of J.R.R. Tolkien's universe, providing an immersive and visually appealing experience. The website's design elements are carefully chosen to reflect the enchanting world of Middle Earth and its diverse cultures. The design includes:
 
-- colors
+- Color Scheme: For our website, we have selected a captivating fantasy-inspired color scheme that harmoniously complements the Lord of the Rings-themed logo. Our primary colors are:
 
-A Fantasy color theme was choosen basied on the Brand logo
+\*Golden Yellow (#fec354) - evoking the aura of magical artifacts (color of a ring)
+
+\*Deep Teal (#007061) - embodying the mystique of enchanted forests
+
+\*Dark Forest Green (#005248) - representing the depths of the ancient realms
 
 ![Color Theme](/static/images/color%20theme.png)
 
+- Typography
+
+A fantasy themed typography was chosen
+
 ![Test Theme](/static/images/testtype.png)
+
+### Wireframes
+
+Balsamiq original Design:
+
+<details><summary>A wireframe design in Balsamiq for the Home page</summary><img src="/static/images/mem wireframes/Home.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Recipe page</summary><img src="/static/images/mem%20wireframes/Recipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Add recipes page</summary><img src="/static/images/mem wireframes/Add%20recipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Edit recipes page</summary><img src="/static/images/mem wireframes/Edit Recipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Profile page</summary><img src="/static/images/mem wireframes/Profile.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Login page</summary><img src="/static/images/mem wireframes/Login.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Change password page</summary><img src="/static/images/mem wireframes/Change password.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Register page</summary><img src="/static/images/mem wireframes/Register.png"></details>
