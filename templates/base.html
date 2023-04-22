@@ -93,13 +93,14 @@
 
     <section>
         <!--Flash messages-->
-        {% with messages = get_flashed_messages() %} {% if messages %} {% for
-        message in messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {% with messages = get_flashed_messages(with_categories=true) %} {% if messages %} {% for category, message in
+        messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
             {{ message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         {% endfor %} {% endif %} {% endwith %}
+
     </section>
     <main class="container">{% block content %} {% endblock %}</main>
     <!-- Footer -->
