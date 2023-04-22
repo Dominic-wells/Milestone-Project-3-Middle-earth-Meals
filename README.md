@@ -95,7 +95,7 @@ Balsamiq original Design:
 <details><summary>A wireframe design in Balsamiq for the Edit recipes page</summary><img src="/static/images/memwireframes/Editrecipes.png"></details>
 <details><summary>A wireframe design in Balsamiq for the Profile page</summary><img src="/static/images/memwireframes/Profile.png"></details>
 <details><summary>A wireframe design in Balsamiq for the Login page</summary><img src="/static/images/memwireframes/Login.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Change password page</summary><img src="/static/images/memwireframes/Change password.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Change password page</summary><img src="/static/images/memwireframes/Changepassword.png"></details>
 <details><summary>A wireframe design in Balsamiq for the Register page</summary><img src="/static/images/memwireframes/Register.png"></details>
 
 ## Features
