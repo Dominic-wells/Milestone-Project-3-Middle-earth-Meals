@@ -180,7 +180,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/Memtesting/Test3norecipesfound.png"></details><br/>
+<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/Memtesting/Test3norecipes found.png"></details><br/>
 
 **4\. User Registration**
 
@@ -299,7 +299,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>User logout</summary><img src="/static/images/Memtesting/Test10aaoggedout.png></details>
+  <details><summary>User logout</summary><img src="/static/images/Memtesting/Test10aloggedout.png></details>
 
 # Testing Tools
 
