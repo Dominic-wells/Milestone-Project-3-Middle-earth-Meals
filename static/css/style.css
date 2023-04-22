@@ -61,7 +61,6 @@ nav {
     position: absolute;
     right: 10px;
     bottom: 5px;
-    /* top: 10px; */
     z-index: 2;
 }
 
@@ -121,11 +120,103 @@ query {
     transform: translateY(4px);
 }
 
-typed-text-container {
+/* typed-text-container {
     background-color: rgba(255, 255, 255, 0.5);
     font-family: 'Bilbo Swash Caps', sans-serif;
     padding: 10px;
+} */
+
+.carousel-background {
+    position: relative;
 }
+
+.carousel-background img {
+    width: 100%;
+    height: auto;
+}
+
+.typewriter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding: 0 1rem;
+}
+
+.text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end) forwards;
+    font-size: 1.6rem;
+    width: 0;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.slide-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    overflow-y: auto;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .typewriter .text-container {
+        animation: none;
+        width: 100%;
+        white-space: normal
+    }
+}
+
+@media only screen and (max-width: 765px) {
+
+    /* .typewriter h4, */
+    .slide-text h4 {
+        font-size: 0.6rem;
+        line-height: 1.2;
+    }
+
+    .typewriter .text-container {
+        animation: none;
+        width: 100%;
+        white-space: normal;
+    }
+}
+
+
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) {
+
+    .typewriter h4,
+    .slide-text h4 {
+        font-size: 1.4rem;
+    }
+} */
 
 /* profile */
 .username .text-center {
