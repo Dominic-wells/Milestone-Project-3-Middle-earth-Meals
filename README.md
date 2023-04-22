@@ -165,7 +165,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>The recipes are viewable</summary><img src="/static/images/memtesting/Test2 Recipe Viewing.png"></details><br/>
+<details><summary>The recipes are viewable</summary><img src="/static/images/Memtesting/Test2recipeviewing.png"></details><br/>
 
 **3\. Recipe Search**
 
@@ -180,7 +180,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/memtesting/Test3 No Recipes Found.png"></details><br/>
+<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/Memtesting/Test3norecipesfound.png"></details><br/>
 
 **4\. User Registration**
 
@@ -195,8 +195,8 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>User Registration</summary><img src="/static/images/memtesting/Test4a Registration.png"></details>
-<details><summary>User Profile</summary><img src="/static/images/memtesting/Test4b Registration.png"></details><br/>
+<details><summary>User Registration</summary><img src="/static/images/Memtesting/Test4aregistration.png"></details>
+<details><summary>User Profile</summary><img src="/static/images/Memtesting/Test4bregistration.png"></details><br/>
 
 **5\. Add Recipe**
 
@@ -212,10 +212,10 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>Add Recipe Page</summary><img src="/static/images/memtesting/Test5a Add Recipe.png"></details>
-<details><summary>Inputting Recipe</summary><img src="/static/images/memtesting/Test5b Add Recipe.png"></details>
-<details><summary>Successfully Added Message</summary><img src="/static/images/memtesting/Test5c Add Recipe.png"></details>
-<details><summary>Recipe on Screen</summary><img src="/static/images/memtesting/Test5d Add Recipe.png"></details><br/>
+<details><summary>Add Recipe Page</summary><img src="/static/images/Memtesting/Test5aaddrecipe.png"></details>
+<details><summary>Inputting Recipe</summary><img src="/static/images/Memtesting/Test5baddrecipe.png"></details>
+<details><summary>Successfully Added Message</summary><img src="/static/images/Memtesting/Test5caddrecipe.png"></details>
+<details><summary>Recipe on Screen</summary><img src="/static/images/Memtesting/Test5daddrecipe.png"></details><br/>
 
 **6\. Edit Recipe**
 
@@ -231,10 +231,10 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>Edit Recipe Page </summary><img src="/static/images/memtesting/Test6a Edit.png"></details>
-<details><summary>Editing Recipe </summary><img src="/static/images/memtesting/Test6b Edit.png"></details>
-<details><summary>Successfully updated Message</summary><img src="/static/images/memtesting/Test6c Edit.png"></details>
-<details><summary>Edit on Screen</summary><img src="/static/images/memtesting/Test6d Edit.png"></details><br/>
+<details><summary>Edit Recipe Page </summary><img src="/static/images/Memtesting/Test6aedit.png"></details>
+<details><summary>Editing Recipe </summary><img src="/static/images/Memtesting/Test6bedit.png"></details>
+<details><summary>Successfully updated Message</summary><img src="/static/images/Memtesting/Test6cedit.png"></details>
+<details><summary>Edit on Screen</summary><img src="/static/images/Memtesting/Test6dedit.png"></details><br/>
 
 **7\. Delete Recipe**
 
@@ -249,9 +249,9 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>Recipe to delete </summary><img src="/static/images/memtesting/Test7a Deleted.png"></details>
-  <details><summary>Recipe delete button </summary><img src="/static/images/memtesting/Test7b Deleted.png"></details>
-  <details><summary>Successfully Deleted Message</summary><img src="/static/images/memtesting/Test7c Deleted.png"></details>
+  <details><summary>Recipe to delete </summary><img src="/static/images/Memtesting/Test7adeleted.png"></details>
+  <details><summary>Recipe delete button </summary><img src="/static/images/Memtesting/Test7bdeleted.png"></details>
+  <details><summary>Successfully Deleted Message</summary><img src="/static/images/Memtesting/Test7cdeleted.png"></details>
   <br/>
 
 **8\. Change Password**
@@ -267,10 +267,10 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>Change password button</summary><img src="/static/images/memtesting/Test8a Change Password.png"></details>
-  <details><summary>Change password form</summary><img src="/static/images/memtesting/Test8b Change Password.png"></details>
-  <details><summary>Successfully changed password Message</summary><img src="/static/images/memtesting/Test8c Change Password.png"></details>
-  <details><summary>Incorrect Username and/or Password Message</summary><img src="/static/images/memtesting/Test8d Change Password.png"></details>
+  <details><summary>Change password button</summary><img src="/static/images/Memtesting/Test8achangepassword.png"></details>
+  <details><summary>Change password form</summary><img src="/static/images/Memtesting/Test8bchangepassword.png"></details>
+  <details><summary>Successfully changed password Message</summary><img src="/static/images/Memtesting/Test8cchangepassword.png"></details>
+  <details><summary>Incorrect Username and/or Password Message</summary><img src="/static/images/Memtesting/Test8dchangepassword.png"></details>
   <br/>
 
 **9\. User Login**
@@ -285,7 +285,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>User login</summary><img src="/static/images/memtesting/Test9a User Loggin.png"></details>
+  <details><summary>User login</summary><img src="/static/images/Memtesting/Test9auserloggin.png"></details>
 
 **10\. User Logout**
 
@@ -299,11 +299,13 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>User logout</summary><img src="/static/images/memtesting/Test10a Logged Out.png></details>
+  <details><summary>User logout</summary><img src="/static/images/Memtesting/Test10aaoggedout.png></details>
 
 # Testing Tools
 
--<details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details> -<details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details> -<details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass.png></details>
+- <details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details>
+- <details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details>
+- <details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass.png></details>
 
 Tested all HTML files using the W3C Markup Validation Service, which pointed out several errors due to the use of Jinja2 templating language. However, no other errors were detected in the HTML pages.
 
