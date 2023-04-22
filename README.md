@@ -2,6 +2,16 @@
 
 ![All the screens](/static/images/Allscreens.png)
 
+Middle Earth Meals is a comprehensive, full-stack web application developed using the Flask framework and MongoDB as the underlying database. This project aims to provide a platform for users to manage recipes inspired by the rich cultures within J.R.R. Tolkien's Middle Earth universe. The application implements CRUD (Create, Read, Update, and Delete) functionalities, allowing users to interact with the recipe database effectively.
+
+The platform is designed to cater to both registered and non-registered users, providing access to the extensive collection of recipes. Users who create an account can fully utilize the features offered by Middle Earth Meals, including adding new recipes, editing and deleting their own entries, and managing their account details.
+
+The primary objective of this project is to create a seamless experience for users to discover, share, and collaborate on Middle Earth-inspired culinary creations, fostering a vibrant community of food enthusiasts and Tolkien fans. Middle Earth Meals serves as a robust and reliable platform for users to explore, create, and appreciate the diverse flavors of Middle Earth.
+
+# Live Site
+
+The live site is published here using Heroku - https://mem-site.herokuapp.com/
+
 1. [Milestone-Project-3-Middle-earth-Meals](#milestone-project-3-middle-earth-meals)
    - [Live Site](#live-site)
 2. [UX](#ux)
@@ -30,16 +40,6 @@
     - [Heroku](#heroku)
     - [GitHub](#github)
 11. [Acknowledgements](#acknowledgements)
-
-Middle Earth Meals is a comprehensive, full-stack web application developed using the Flask framework and MongoDB as the underlying database. This project aims to provide a platform for users to manage recipes inspired by the rich cultures within J.R.R. Tolkien's Middle Earth universe. The application implements CRUD (Create, Read, Update, and Delete) functionalities, allowing users to interact with the recipe database effectively.
-
-The platform is designed to cater to both registered and non-registered users, providing access to the extensive collection of recipes. Users who create an account can fully utilize the features offered by Middle Earth Meals, including adding new recipes, editing and deleting their own entries, and managing their account details.
-
-The primary objective of this project is to create a seamless experience for users to discover, share, and collaborate on Middle Earth-inspired culinary creations, fostering a vibrant community of food enthusiasts and Tolkien fans. Middle Earth Meals serves as a robust and reliable platform for users to explore, create, and appreciate the diverse flavors of Middle Earth.
-
-# Live Site
-
-The live site is published here using Heroku - https://mem-site.herokuapp.com/
 
 ## Ux
 
@@ -151,7 +151,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>The website is accessiable and the homepage is displayed</summary><img src="static\images\Memtesting\Test1 Homescreen.png"></details>
+<details><summary>The website is accessiable and the homepage is displayed</summary><img src="/static/images/memtesting/Test1 Homescreen.png"></details>
 
 **2\. Recipe Browsing**
 
@@ -165,7 +165,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>The recipes are viewable</summary><img src="/static/images/memtesting/Test2 Recipe Viewing"></details><br/>
+<details><summary>The recipes are viewable</summary><img src="/static/images/memtesting/Test2 Recipe Viewing.png"></details><br/>
 
 **3\. Recipe Search**
 
@@ -180,7 +180,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/memtesting/Test3 No Recipes Found"></details><br/>
+<details><summary>Recipes in the database are found based on name and description </summary><img src="/static/images/memtesting/Test3 No Recipes Found.png"></details><br/>
 
 **4\. User Registration**
 
@@ -195,8 +195,8 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>User Registration</summary><img src="/static/images/memtesting/Test4a Registration"></details>
-<details><summary>User Profile</summary><img src="/static/images/memtesting/Test4b Registration"></details><br/>
+<details><summary>User Registration</summary><img src="/static/images/memtesting/Test4a Registration.png"></details>
+<details><summary>User Profile</summary><img src="/static/images/memtesting/Test4b Registration.png"></details><br/>
 
 **5\. Add Recipe**
 
@@ -303,7 +303,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 # Testing Tools
 
-- W3C Markup Validator -<details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details> -<details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details> -<details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass></details>
+-<details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details> -<details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details> -<details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass.png></details>
 
 Tested all HTML files using the W3C Markup Validation Service, which pointed out several errors due to the use of Jinja2 templating language. However, no other errors were detected in the HTML pages.
 
