@@ -299,7 +299,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-  <details><summary>User logout</summary><img src="/static/images/Memtesting/Test10aloggedout.png></details>
+  <details><summary>User logout</summary><img src="/static/images/Memtesting/Test10aloggedout.png"></details>
 
 # Testing Tools
 
