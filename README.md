@@ -1,10 +1,45 @@
 # Milestone-Project-3-Middle-earth-Meals
 
+![All the screens](/static/images/Allscreens.png)
+
+1. [Milestone-Project-3-Middle-earth-Meals](#milestone-project-3-middle-earth-meals)
+   - [Live Site](#live-site)
+2. [UX](#ux)
+   - [User Stories](#user-stories)
+   - [Design](#design)
+     - [Color Scheme](#color-scheme)
+     - [Typography](#typography)
+     - [Responsiveness](#responsiveness)
+   - [Wireframes](#wireframes)
+3. [Features](#features)
+   - [Features Left to Implement](#features-left-to-implement)
+4. [Testing](#testing)
+   - [Manual Testing](#manual-testing)
+     - [Manual Testing Plan](#manual-testing-plan)
+     - [Test Scenarios](#test-scenarios)
+     - [Test Steps, Expected Results, and Success Criteria](#test-steps-expected-results-and-success-criteria)
+5. [Testing Tools](#testing-tools)
+6. [Errors and Bugs](#errors-and-bugs)
+7. [Technologies Used](#technologies-used)
+8. [Applications and Libraries](#applications-and-libraries)
+9. [Database](#database)
+   - [Categories](#categories)
+   - [Users](#users)
+   - [Recipes](#recipes)
+10. [Deployment](#deployment)
+    - [Heroku](#heroku)
+    - [GitHub](#github)
+11. [Acknowledgements](#acknowledgements)
+
 Middle Earth Meals is a comprehensive, full-stack web application developed using the Flask framework and MongoDB as the underlying database. This project aims to provide a platform for users to manage recipes inspired by the rich cultures within J.R.R. Tolkien's Middle Earth universe. The application implements CRUD (Create, Read, Update, and Delete) functionalities, allowing users to interact with the recipe database effectively.
 
 The platform is designed to cater to both registered and non-registered users, providing access to the extensive collection of recipes. Users who create an account can fully utilize the features offered by Middle Earth Meals, including adding new recipes, editing and deleting their own entries, and managing their account details.
 
 The primary objective of this project is to create a seamless experience for users to discover, share, and collaborate on Middle Earth-inspired culinary creations, fostering a vibrant community of food enthusiasts and Tolkien fans. Middle Earth Meals serves as a robust and reliable platform for users to explore, create, and appreciate the diverse flavors of Middle Earth.
+
+# Live Site
+
+The live site is published here using Heroku - https://mem-site.herokuapp.com/
 
 ## Ux
 
@@ -45,6 +80,10 @@ For our website, we have selected a captivating fantasy-inspired color scheme th
 A fantasy themed typography was chosen
 
 ![Test Theme](/static/images/testtype.png)
+
+### Responsiveness
+
+The website aims to provide a fast and user-friendly experience for all users, regardless of whether they are accessing it from a desktop, tablet, or mobile device. Extensive testing has been conducted on all three platforms to ensure optimal performance. The site's design is adaptable to different screen sizes and device types, with layout adjustments made accordingly to ensure usability across all formats. The primary means of achieving this responsiveness is through the use of the Bootstrap CSS Framework.
 
 ### Wireframes
 
@@ -112,7 +151,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>The website is accessiable and the homepage is displayed</summary><img src="/static/images/memtesting/Test1 Homescreen"></details>
+<details><summary>The website is accessiable and the homepage is displayed</summary><img src="static\images\Memtesting\Test1 Homescreen.png"></details>
 
 **2\. Recipe Browsing**
 
@@ -261,3 +300,140 @@ I used manual testing to ensure that the website functions as expected and provi
 * **PASS**
 
   <details><summary>User logout</summary><img src="/static/images/memtesting/Test10a Logged Out.png></details>
+
+# Testing Tools
+
+- W3C Markup Validator -<details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details> -<details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details> -<details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass></details>
+
+Tested all HTML files using the W3C Markup Validation Service, which pointed out several errors due to the use of Jinja2 templating language. However, no other errors were detected in the HTML pages.
+
+# Errors and Bugs
+
+- Toggle bar will sometimes display over the logo
+- Issue with adding square brackets to the Preparation_steps and Ingredients. The issue was that when it was splitting the ingredients and preparation steps by the newline character (\n), it was including the newline character in the resulting list. This means that each item in the list had a trailing newline character, which was causing the square brackets to appear in the template. Using the strip() method to remove any leading or trailing whitespace from each item in the list, I was able to remove the newline character and fix the issue.
+
+# Technologies Used
+
+- HTML
+- CSS
+- Python
+- Flask
+- JINJA Templating
+- MongoDB (non relational DB)
+- Git & GitHub
+- Heroku
+
+# Applications and Libraries
+
+- Bootstrap Utilized to enhance website responsiveness and styling
+- Visual Studio Code IDE used to code the site and its features
+- Google Fonts Used to import fonts
+- Utilized GitHub as online repository for code storage, commit messages, and versioning
+- Heroku Used to make the site live
+- Created wireframes during design phase using Balsamiq
+- Font Awesome icons
+- amiresponsive for Screenshot
+
+## Database
+
+MongoDB, a non-relational database, was utilized to store the collections outlined below. These collections were held in MemDb
+
+###### categories
+
+```
+_id: <ObjectId>
+Category_name: <String>
+```
+
+###### Users
+
+```
+_id: <ObjectId>
+Username: <String>
+Password: <String>(stored using SHA256)
+```
+
+###### Recipes
+
+```
+_id: <ObjectId>
+Name: <String>
+Category_name:<String>
+Description: <String>
+Ingredients: <Array>
+Preparation_step: <Array>
+Tools: <Array>
+Notes: <string>
+created_by: <string>
+image_url <String>
+```
+
+### Categories:
+
+This collection stores information about the different categories of recipes available on the website. Each document in the collection has the following fields:
+
+- \_id: A unique ObjectId automatically generated by MongoDB to identify each document.
+- Category_name: A string representing the name of the recipe category.
+
+### Users:
+
+This collection stores user account information. Each document in the collection has the following fields:
+
+- \_id: A unique ObjectId automatically generated by MongoDB to identify each document.
+- Username: A string representing the user's username.
+- Password: A string containing the user's password, which is stored using the secure SHA256 hashing algorithm to ensure data privacy and security.
+
+Recipes:
+This collection stores the recipe information. Each document in the collection has the following fields:
+
+- \_id: A unique ObjectId automatically generated by MongoDB to identify each document.
+- Name: A string representing the name of the recipe.
+- Category_name: A string representing the category the recipe belongs to.
+- Description: A string containing a brief description of the recipe.
+- Ingredients: An array of strings listing the ingredients required for the recipe.
+- Preparation_step: An array of strings outlining the steps to prepare the recipe.
+- Tools: An array of strings listing the tools needed to prepare the recipe.
+- Notes: A string containing any additional notes or comments about the recipe.
+- created_by: A string representing the username of the user who submitted the recipe.
+- image_url: A string containing the URL of the recipe's image.
+
+The database used in this project, MemDb, is an in-memory database that stores the data in the server's memory. It provides high performance and low latency access to the data, making it a suitable choice for this application.
+
+## Deployment
+
+### Heroku
+
+```
+1. Generate a "requirements.txt" file with the command "pip3 freeze --local > requirements.txt"
+2. Produce a "Procfile" using the command "echo web: python app.py > Procfile"
+3. Apply the changes to your repository by executing "git add -A", "git commit -m 'your commit message here'", and "git push"
+4. Verify that a .gitignore file exists in your repository
+5. Include "env.py" and "pycache/" in your .gitignore file to prevent exposure of sensitive data in your repository
+6. Sign in or register for a Heroku account
+7. Press "New" on the top-right corner of the dashboard and choose "Create new app"
+8. Provide an "App name", select a region, and hit "Create app"
+9. Navigate to the "Deploy" tab and choose "GitHub" under "Deployment method"
+10. Locate your GitHub repository and press "Connect" (Note: avoid enabling automatic  deployment at this point to prevent errors)
+11. Access the "Settings" tab and unveil Config Vars by clicking "Reveal Config Vars"
+12. Input the key-value pairs corresponding to those in your env.py file:
+13. Return to the "Deploy" tab and activate "Enable Automatic Deployment"
+14. Under "Manual deploy" in the "Deploy" tab, choose "main"
+15. Press "Deploy Branch"
+16. Once the app finishes building, click "Open App" to launch your site.
+```
+
+### GitHub
+
+```
+1. Sign in to GitHub and find the desired GitHub Repository.
+2. Beneath the repository name, select "Clone or download."
+3. To clone the repository via HTTPS, copy the link provided under "Clone with HTTPS."
+```
+
+## Acknowledgements
+
+- [Awesome README](https://github.com/matiassingers/awesome-readme)
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
+- The people at Reddit for all your coding advice
+- James for being the best coder I know and a real life saver
+- Toby for being the best son money can buy
