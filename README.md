@@ -151,7 +151,7 @@ I used manual testing to ensure that the website functions as expected and provi
 
 * **PASS**
 
-<details><summary>The website is accessiable and the homepage is displayed</summary><img src="/static/images/memtesting/Test1homescreen.png"></details>
+<details><summary>The website is accessiable and the homepage is displayed</summary><img src="/static/images/Memtesting/Test1homescreen.png"></details>
 
 **2\. Recipe Browsing**
 
