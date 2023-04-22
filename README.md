@@ -303,9 +303,9 @@ I used manual testing to ensure that the website functions as expected and provi
 
 # Testing Tools
 
-- <details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png></details>
-- <details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png></details>
-- <details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass.png></details>
+- <details><summary>W3C CSS Validator</summary><img src="/static/images/css Validator.png"""></details>
+- <details><summary>Lighthouse report</summary><img src="/static/images/LightHouse.png"></details>
+- <details><summary>CIPepe8 Python validator</summary><img src="/static/images/Pythonpass.png"></details>
 
 Tested all HTML files using the W3C Markup Validation Service, which pointed out several errors due to the use of Jinja2 templating language. However, no other errors were detected in the HTML pages.
 
