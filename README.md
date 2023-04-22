@@ -89,14 +89,14 @@ The website aims to provide a fast and user-friendly experience for all users, r
 
 Balsamiq original Design:
 
-<details><summary>A wireframe design in Balsamiq for the Home page</summary><img src="/static/images/mem wireframes/Home.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Recipe page</summary><img src="/static/images/mem%20wireframes/Recipes.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Add recipes page</summary><img src="/static/images/mem wireframes/Add%20recipes.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Edit recipes page</summary><img src="/static/images/mem wireframes/Edit Recipes.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Profile page</summary><img src="/static/images/mem wireframes/Profile.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Login page</summary><img src="/static/images/mem wireframes/Login.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Change password page</summary><img src="/static/images/mem wireframes/Change password.png"></details>
-<details><summary>A wireframe design in Balsamiq for the Register page</summary><img src="/static/images/mem wireframes/Register.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Home page</summary><img src="/static/images/memwireframes/Addrecipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Recipe page</summary><img src="/static/images/memwireframes/Recipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Add recipes page</summary><img src="/static/images/memwireframes/Addrecipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Edit recipes page</summary><img src="/static/images/memwireframes/EditRecipes.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Profile page</summary><img src="/static/images/memwireframes/Profile.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Login page</summary><img src="/static/images/memwireframes/Login.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Change password page</summary><img src="/static/images/memwireframes/Change password.png"></details>
+<details><summary>A wireframe design in Balsamiq for the Register page</summary><img src="/static/images/memwireframes/Register.png"></details>
 
 ## Features
 
