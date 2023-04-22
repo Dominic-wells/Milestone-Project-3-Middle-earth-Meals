@@ -40,7 +40,7 @@ def get_recipes():
 def search():
     query = request.form.get("query")
     if not query:
-        flash("Please enter a search query.")
+        flash("Please enter a search query.", "danger")
         return redirect(url_for("get_recipes"))
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     return render_template("recipes.html", recipes=recipes)
@@ -68,7 +68,7 @@ def add_recipe():
             "image_url": request.form.get("image_url")
         }
         mongo.db.recipes.insert_one(recipe)
-        flash("Recipe Successfully Added")
+        flash("Recipe Successfully Added", "success")
         return redirect(url_for("get_recipes"))
     categories = mongo.db.categories.find().sort("Category_name", 1)
     return render_template("add_recipe.html", categories=categories)
@@ -95,7 +95,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update_one(
             {"_id": ObjectId(recipe_id)}, {"$set": submit})
-        flash("Recipe Successfully Updated")
+        flash("Recipe Successfully Updated", "success")
         return redirect(url_for('profile', username=session['user']))
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     categories = mongo.db.categories.find().sort("Category_name", 1)
@@ -109,7 +109,7 @@ def edit_recipe(recipe_id):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
-    flash("Recipe Successfully Deleted")
+    flash("Recipe Successfully Deleted", "success")
     return redirect(url_for("get_recipes"))
 
 
@@ -122,7 +122,7 @@ def register():
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
         if existing_user:
-            flash("Username already exists")
+            flash("Username already exists", "danger")
             return redirect(url_for("register"))
         register = {
             "username": request.form.get("username").lower(),
@@ -130,7 +130,7 @@ def register():
         }
         mongo.db.users.insert_one(register)
         session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
+        flash("Registration Successful!", "success")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("register.html")
 
@@ -149,10 +149,10 @@ def change_password():
                 {"username": session["user"]},
                 {"$set": {"password": generate_password_hash
                           (request.form.get("new_password"))}})
-            flash("Password Successfully Changed")
+            flash("Password Successfully Changed", "success")
             return redirect(url_for("profile", username=session["user"]))
         else:
-            flash("Incorrect Password")
+            flash("Incorrect Password", "danger")
             return redirect(url_for("change_password"))
     return render_template("change_password.html")
 
@@ -170,14 +170,15 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                flash("Welcome, {}".format(
+                    request.form.get("username")), "success")
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password", "danger")
                 return redirect(url_for("login"))
         else:
-            flash("Incorrect Username and/or Password")
+            flash("Incorrect Username and/or Password", "danger")
             return redirect(url_for("login"))
 
     return render_template("login.html")
@@ -187,7 +188,7 @@ def login():
 # display a success message.
 @app.route("/logout")
 def logout():
-    flash("You have been logged out")
+    flash("You have been logged out", "success")
     session.pop("user")
     return redirect(url_for("login"))
 
